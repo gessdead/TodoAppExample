@@ -8,8 +8,11 @@ const TodoList = () => {
 
     return (
         <ul>
-            <li><TodoListItem/></li>
-            <li><TodoListItem/></li>
+            <li><TodoListItem label='Drink Coffee'/></li>
+            <li><TodoListItem
+                label='Build react app'
+                important/>
+            </li>
         </ul>
     )
 };
