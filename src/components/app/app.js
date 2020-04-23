@@ -32,7 +32,7 @@ export default class App extends Component {
         })
     };
 
-    addItem = () => {
+    createNewItem = () => {
         this.setState(({ todoData }) => {
             const testTodo = {
                 label: 'ToDo',
@@ -48,6 +48,10 @@ export default class App extends Component {
         })
     };
 
+    addItem = (props) => {
+        console.log(props);
+    };
+
     render() {
         return (
             <div className='todo-app'>
@@ -59,10 +63,11 @@ export default class App extends Component {
 
                 <TodoList
                     todos={this.state.todoData}
-                    onDeleted={ this.deleteItem }/>
+                    onDeleted={ this.deleteItem }
+                    onAdded={this.addItem}/>
 
                 <AddItemForm
-                    onAddItem={this.addItem} />
+                    onAddItem={this.createNewItem} />
             </div>
         )
     }
